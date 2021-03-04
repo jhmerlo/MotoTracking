@@ -12,6 +12,7 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
+    "google-maps-api-loader": "^1.1.1",
     "quasar": "^1.0.0"
   },
   "devDependencies": {

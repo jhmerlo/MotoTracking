@@ -84,7 +84,7 @@ export default {
       if (email === 'motociclista@email.com' && password === '12345678') {
         this.$q.loading.show()
         setTimeout(async () => {
-          this.$router.push({ name: 'home' })
+          this.$router.push({ name: 'app.home' })
           await this.$store.commit('auth/handleLogin')
           console.log(this.$store.getters['auth/isLogged'])
           this.$q.loading.hide()
