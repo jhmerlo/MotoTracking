@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
+
 import auth from './auth'
-// import example from './module-example'
 
 Vue.use(Vuex)
 
@@ -19,9 +20,16 @@ export default function (/* { ssrContext } */) {
     modules: {
       auth
     },
-
+    plugins: [
+      createPersistedState({
+        paths: [
+          'auth.user'
+        ],
+        key: process.env.STORAGE_KEY
+      })
+    ],
     // enable strict mode (adds overhead!)
-    // for dev mode and --debug builds only
+    // for dev mode only
     strict: process.env.DEBUGGING
   })
 

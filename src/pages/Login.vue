@@ -8,7 +8,7 @@
         />
       </div>
       <q-card-section>
-        <q-form @submit="handleLogin" class="row q-px-lg justify-center q-col-gutter-lg">
+        <q-form @submit="handleLogin" class="row q-px-sm justify-center q-col-gutter-lg">
           <div class="col-12 q-mt-md">
             <q-input
               v-model="user.email"
@@ -80,25 +80,13 @@ export default {
   }),
   methods: {
     async handleLogin () {
-      const { email, password } = this.user
-      if (email === 'motociclista@email.com' && password === '12345678') {
-        this.$q.loading.show()
-        setTimeout(async () => {
-          this.$router.push({ name: 'app.home' })
-          await this.$store.commit('auth/handleLogin')
-          console.log(this.$store.getters['auth/isLogged'])
-          this.$q.loading.hide()
-        }, 2000)
-      } else {
-        this.$q.notify({
-          message: 'Falha na autenticação, email ou senha incorretos.',
-          type: 'negative'
-        })
-      }
+      await this.$store.dispatch('auth/attemptLogin', this.user)
+      this.$q.notify({
+        type: 'positive',
+        message: 'Login efetuado com sucesso!'
+      })
+      return this.$router.push({ name: 'app.home' })
     }
-  },
-  created () {
-    console.log(this.$store.getters['auth/isLogged'])
   }
 }
 </script>

@@ -1037,6 +1037,16 @@
   "resolved" "https://registry.npmjs.org/@quasar/fastclick/-/fastclick-1.1.4.tgz"
   "version" "1.1.4"
 
+"@quasar/quasar-app-extension-dotenv@^1.1.0":
+  "integrity" "sha512-VnTrG4auo8xsrXyD5QUFfuj9EJTtHLR74hkZ34wZRe/T1v7qTDtMvmPT0h6dJfRGQyQjesodsefTPZrWLFw3dA=="
+  "resolved" "https://registry.npmjs.org/@quasar/quasar-app-extension-dotenv/-/quasar-app-extension-dotenv-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "dotenv" "^8.2.0"
+    "dotenv-expand" "^5.1.0"
+    "dotenv-parse-variables" "^2.0.0"
+    "fs" "^0.0.2"
+
 "@sindresorhus/is@^0.14.0":
   "integrity" "sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ=="
   "resolved" "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz"
@@ -3131,6 +3141,13 @@
   dependencies:
     "ms" "2.1.2"
 
+"debug@^4.3.1":
+  "integrity" "sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ=="
+  "resolved" "https://registry.npmjs.org/debug/-/debug-4.3.1.tgz"
+  "version" "4.3.1"
+  dependencies:
+    "ms" "2.1.2"
+
 "debug@~3.1.0":
   "integrity" "sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g=="
   "resolved" "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz"
@@ -3183,6 +3200,11 @@
   "integrity" "sha512-95k0GDqvBjZavkuvzx/YqVLv/6YYa17fz6ILMSf7neqQITCPbnfEnQvEgMPNjH4kgobe7+WIL0yJEHku+H3qtQ=="
   "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-1.5.2.tgz"
   "version" "1.5.2"
+
+"deepmerge@^4.2.2":
+  "integrity" "sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg=="
+  "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-4.2.2.tgz"
+  "version" "4.2.2"
 
 "default-gateway@^4.2.0":
   "integrity" "sha512-h6sMrVB1VMWVrW13mSc6ia/DwYYw5MN6+exNu1OaJeFac5aSAvwM7lZ0NVfTABuSkQelr4h5oebg3KB1XPdjgA=="
@@ -3382,6 +3404,24 @@
   "version" "5.3.0"
   dependencies:
     "is-obj" "^2.0.0"
+
+"dotenv-expand@^5.1.0":
+  "integrity" "sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA=="
+  "resolved" "https://registry.npmjs.org/dotenv-expand/-/dotenv-expand-5.1.0.tgz"
+  "version" "5.1.0"
+
+"dotenv-parse-variables@^2.0.0":
+  "integrity" "sha512-/Tezlx6xpDqR6zKg1V4vLCeQtHWiELhWoBz5A/E0+A1lXN9iIkNbbfc4THSymS0LQUo8F1PMiIwVG8ai/HrnSA=="
+  "resolved" "https://registry.npmjs.org/dotenv-parse-variables/-/dotenv-parse-variables-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "debug" "^4.3.1"
+    "is-string-and-not-blank" "^0.0.2"
+
+"dotenv@^8.2.0":
+  "integrity" "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz"
+  "version" "8.2.0"
 
 "duplexer@^0.1.1":
   "integrity" "sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg=="
@@ -4367,6 +4407,11 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+"fs@^0.0.2":
+  "integrity" "sha1-4fJE7zkzwbKmS9R5kTYGDQ9ZFPg="
+  "resolved" "https://registry.npmjs.org/fs/-/fs-0.0.2.tgz"
+  "version" "0.0.2"
+
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -5264,6 +5309,18 @@
   "integrity" "sha1-EtSj3U5o4Lec6428hBc66A2RykQ="
   "resolved" "https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz"
   "version" "1.1.0"
+
+"is-string-and-not-blank@^0.0.2":
+  "integrity" "sha512-FyPGAbNVyZpTeDCTXnzuwbu9/WpNXbCfbHXLpCRpN4GANhS00eEIP5Ef+k5HYSNIzIhdN9zRDoBj6unscECvtQ=="
+  "resolved" "https://registry.npmjs.org/is-string-and-not-blank/-/is-string-and-not-blank-0.0.2.tgz"
+  "version" "0.0.2"
+  dependencies:
+    "is-string-blank" "^1.0.1"
+
+"is-string-blank@^1.0.1":
+  "integrity" "sha512-9H+ZBCVs3L9OYqv8nuUAzpcT9OTgMD1yAWrG7ihlnibdkbtB850heAmYWxHuXc4CHy4lKeK69tN+ny1K7gBIrw=="
+  "resolved" "https://registry.npmjs.org/is-string-blank/-/is-string-blank-1.0.1.tgz"
+  "version" "1.0.1"
 
 "is-string@^1.0.5":
   "integrity" "sha512-buY6VNRjhQMiF1qWDouloZlQbRhDPCebwxSjxMjxgemYT46YMd2NR0/H+fBhEfWX4A/w9TBJ+ol+okqJKFE6vQ=="
@@ -8167,6 +8224,11 @@
   "resolved" "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz"
   "version" "1.7.2"
 
+"shvl@^2.0.2":
+  "integrity" "sha512-G3KkIXPza3dgkt6Bo8zIl5K/KvAAhbG6o9KfAjhPvrIIzzAhnfc2ztv1i+iPTbNNM43MaBUqIaZwqVjkSgY/rw=="
+  "resolved" "https://registry.npmjs.org/shvl/-/shvl-2.0.2.tgz"
+  "version" "2.0.2"
+
 "signal-exit@^3.0.0", "signal-exit@^3.0.2":
   "integrity" "sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA=="
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz"
@@ -9303,7 +9365,15 @@
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"
 
-"vuex@3.6.0":
+"vuex-persistedstate@^4.0.0-beta.3":
+  "integrity" "sha512-T4IRD27qoUWh+8qr6T6zVp15xO7x/nPgnU13OD0C2uUwA7U9PhGozrj6lvVmMYDyRgc36J0msMXn3GvwHjkIhA=="
+  "resolved" "https://registry.npmjs.org/vuex-persistedstate/-/vuex-persistedstate-4.0.0-beta.3.tgz"
+  "version" "4.0.0-beta.3"
+  dependencies:
+    "deepmerge" "^4.2.2"
+    "shvl" "^2.0.2"
+
+"vuex@^3.0 || ^4.0.0-rc", "vuex@3.6.0":
   "integrity" "sha512-W74OO2vCJPs9/YjNjW8lLbj+jzT24waTo2KShI8jLvJW8OaIkgb3wuAMA7D+ZiUxDOx3ubwSZTaJBip9G8a3aQ=="
   "resolved" "https://registry.npmjs.org/vuex/-/vuex-3.6.0.tgz"
   "version" "3.6.0"

@@ -12,22 +12,36 @@ export default {
       default: () => ({})
     }
   },
+  data: () => ({
+    marker: null,
+    google: null,
+    map: null
+  }),
   async created () {
     try {
-      const google = await gmapsInit()
+      this.google = await gmapsInit()
       const mapOptions = {
-        center: new google.maps.LatLng(this.location.lat, this.location.lng),
+        center: new this.google.maps.LatLng(this.location.lat, this.location.lng),
         zoom: 14,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: this.google.maps.MapTypeId.ROADMAP
       }
-      const map = new google.maps.Map(this.$el, mapOptions)
-      const marker = new google.maps.Marker({
-        position: new google.maps.LatLng(this.location.lat, this.location.lng),
-        map
+      this.map = new this.google.maps.Map(this.$el, mapOptions)
+      this.marker = new this.google.maps.Marker({
+        position: new this.google.maps.LatLng(this.location.lat, this.location.lng),
+        map: this.map
       })
-      console.log(marker)
+      console.log(this.marker)
     } catch (error) {
       console.error(error)
+    }
+  },
+  watch: {
+    location () {
+      this.marker.setMap(null)
+      this.marker = new this.google.maps.Marker({
+        position: new this.google.maps.LatLng(this.location.lat, this.location.lng),
+        map: this.map
+      })
     }
   }
 }

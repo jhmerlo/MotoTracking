@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import routes from './routes'
 
 Vue.use(VueRouter)
@@ -14,7 +13,14 @@ Vue.use(VueRouter)
  * with the Router instance.
  */
 
-export default function (/* { store, ssrContext } */) {
+let flag = false
+
+export default function ({ store }) {
+  const originalPush = VueRouter.prototype.push
+  VueRouter.prototype.push = function push (location) {
+    return originalPush.call(this, location).catch(err => err)
+  }
+
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
     routes,
@@ -26,5 +32,21 @@ export default function (/* { store, ssrContext } */) {
     base: process.env.VUE_ROUTER_BASE
   })
 
+  Router.beforeEach((to, from, next) => {
+    const user = store.getters['auth/getUser']
+    if (!user) {
+      if (to.matched.some(route => route.meta.authOnly)) {
+        if (flag) return
+        flag = true
+        Vue.prototype.$q.notify({
+          type: 'warning',
+          message: 'Faça o login para acessar esta página.'
+        })
+        return next({ name: 'login' })
+      }
+      return next()
+    } else if (to.name === 'login') return next({ name: 'app.home' })
+    return next()
+  })
   return Router
 }

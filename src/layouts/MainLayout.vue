@@ -9,13 +9,13 @@
       <q-tabs
         class="text-grey-8"
         active-color="primary"
+        dense
       >
         <q-route-tab
           style="width: 33%"
           :to="{ name: 'app.profile' }"
           name="app.profile"
           icon="o_account_circle"
-          label="Perfil"
           no-caps
         />
         <q-route-tab
@@ -23,7 +23,6 @@
           :to="{ name: 'app.home' }"
           name="app.home"
           icon="o_home"
-          label="Início"
           no-caps
         />
         <q-route-tab
@@ -31,7 +30,6 @@
           :to="{ name: 'app.history' }"
           name="app.history"
           icon="o_location_on"
-          label="Localizações"
           no-caps
         />
       </q-tabs>

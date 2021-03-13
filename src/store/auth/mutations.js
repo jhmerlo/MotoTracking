@@ -1,4 +1,4 @@
-
-export function handleLogin (state) {
-  state.isLogged = true
+import Vue from 'vue'
+export function setUser (state, payload) {
+  Vue.set(state, 'user', payload)
 }

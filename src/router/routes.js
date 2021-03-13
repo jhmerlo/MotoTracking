@@ -14,12 +14,18 @@ const routes = [
       {
         path: 'inicio',
         name: 'app.home',
-        component: () => import('pages/Home.vue')
+        component: () => import('pages/Home.vue'),
+        meta: {
+          authOnly: true
+        }
       },
       {
         path: 'perfil',
         name: 'app.profile',
-        component: () => import('pages/Profile.vue')
+        component: () => import('pages/Profile.vue'),
+        meta: {
+          authOnly: true
+        }
       }
     ]
   },
