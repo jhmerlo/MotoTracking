@@ -9,7 +9,6 @@
       <q-tabs
         class="text-grey-8"
         active-color="primary"
-        dense
       >
         <q-route-tab
           style="width: 33%"
