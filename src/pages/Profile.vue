@@ -1,7 +1,7 @@
 <template>
-  <q-page class="bg-grey-4 q-mx-auto" style="max-width: 600px" padding>
+  <q-page class="q-mx-auto" style="max-width: 600px" padding>
     <div class="q-pa-md row items-center text-h6 text-primary">
-      <q-icon name="o_account_circle" color="grey-8" size="30px" class="q-mr-md" />
+      <q-icon name="o_account_circle" color="grey-6" size="25px" class="q-mr-md" />
       Meus Dados
     </div>
     <div class="row q-pa-md q-col-gutter-md">
@@ -18,6 +18,7 @@
           v-model="user.email"
           label="E-mail"
           outlined
+          disable
           dense
         />
       </div>
@@ -47,7 +48,7 @@
       </div>
     </div>
     <div class="q-pa-md row items-center text-h6 text-primary">
-      <q-icon name="two_wheeler" color="grey-8" size="30px" class="q-mr-md" />
+      <q-icon name="two_wheeler" color="grey-6" size="30px" class="q-mr-md" />
       Minha Motocicleta
     </div>
     <div class="row q-pa-md q-col-gutter-md">
@@ -92,15 +93,17 @@
         outline
       />
     </div>
-    <div style="text-decoration: underline" class="col-12 q-my-sm text-grey-7 text-center">
-      Sair
+    <div class="q-my-sm text-grey-7 text-center">
+      <span @click="handleLogout" style="text-decoration: underline" class="cursor-pointer">
+        Sair
+      </span>
     </div>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex',
+  name: 'Profile',
   data: () => ({
     user: {
       name: 'José Henrique',
@@ -115,6 +118,16 @@ export default {
         plate: 'MTH-2888'
       }
     }
-  })
+  }),
+  methods: {
+    async handleLogout () {
+      await this.$store.dispatch('auth/logout')
+      this.$q.notify({
+        type: 'positive',
+        message: 'Sua conta foi desconectada com sucesso! Volte Sempre :)'
+      })
+      return this.$router.push({ name: 'login' })
+    }
+  }
 }
 </script>

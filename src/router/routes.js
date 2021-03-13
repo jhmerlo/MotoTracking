@@ -14,7 +14,7 @@ const routes = [
       {
         path: 'inicio',
         name: 'app.home',
-        component: () => import('pages/Home.vue'),
+        component: () => import('pages/Home'),
         meta: {
           authOnly: true
         }
@@ -22,7 +22,15 @@ const routes = [
       {
         path: 'perfil',
         name: 'app.profile',
-        component: () => import('pages/Profile.vue'),
+        component: () => import('pages/Profile'),
+        meta: {
+          authOnly: true
+        }
+      },
+      {
+        path: 'historico',
+        name: 'app.history',
+        component: () => import('pages/History'),
         meta: {
           authOnly: true
         }

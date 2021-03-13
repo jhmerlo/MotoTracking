@@ -51,7 +51,6 @@ export default {
       lat: '',
       lng: ''
     },
-    apiKey: 'AIzaSyAxiknv-6jGy94ydJQ3UoKnxNGfRBWg2nY',
     actualLocalization: '',
     lastUpdated: '',
     showMap: false

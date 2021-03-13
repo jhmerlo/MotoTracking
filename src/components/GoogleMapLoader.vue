@@ -30,7 +30,6 @@ export default {
         position: new this.google.maps.LatLng(this.location.lat, this.location.lng),
         map: this.map
       })
-      console.log(this.marker)
     } catch (error) {
       console.error(error)
     }

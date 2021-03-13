@@ -15,7 +15,7 @@ export async function logout ({ commit }) {
   if (token !== null) {
     localStorage.removeItem('access_token')
 
-    await Vue.prototype.$axios.post('logout', null, {
+    await Vue.prototype.$axios.post('logout', { access_token: token }, {
       headers: {
         Authorization: `Bearer ${token}`
       },
