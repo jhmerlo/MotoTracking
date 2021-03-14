@@ -80,7 +80,7 @@ export default {
   async created () {
     this.getLastLocalization()
     setInterval(async () => {
-      const { data } = await this.$axios.get('localization/last', { disableLoading: true })
+      const { data } = await this.$axios.get('localization/last', { disableLoading: true }, { ignoreErrorHandling: true })
       this.location = {
         lat: data.localization.latitude,
         lng: data.localization.longitude
