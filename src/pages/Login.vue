@@ -54,6 +54,7 @@
           </div>
           <div class="col-12 text-center">
             <q-btn
+              :to="{ name: 'register' }"
               label="Cadastro"
               class="full-width q-py-sm"
               color="primary"
