@@ -71,7 +71,8 @@
                 v-model="user.cpf"
                 :rules="[required, validCPF]"
                 :mask="cpfMask"
-                label="CPF"
+                label="CPF *"
+                unmasked-value
                 outlined
                 lazy-rules
                 dense
@@ -228,7 +229,12 @@ export default {
   methods: {
     async handleRegister () {
       if (this.slide === 3) {
-        console.log(this.user)
+        await this.$axios.post('register', this.user)
+        this.$q.notify({
+          type: 'positive',
+          message: 'Usuário cadastrado com sucesso, faça login para continuar.'
+        })
+        return this.$router.push({ name: 'login' })
       } else this.slide++
     }
   }

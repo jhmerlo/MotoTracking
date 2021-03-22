@@ -53,7 +53,8 @@ export default {
     },
     actualLocalization: '',
     lastUpdated: '',
-    showMap: false
+    showMap: false,
+    exitPage: false
   }),
   methods: {
     async getLastLocalization () {

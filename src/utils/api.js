@@ -9,13 +9,6 @@ export const handleErrors = async (error, { router, store, axios }) => {
     })
   }
 
-  if (!error.response || typeof error.response !== 'object') {
-    return Notify.create({
-      type: 'warning',
-      message: 'Problemas de conexão, por favor tente mais tarde.'
-    })
-  }
-
   const { status, data } = error.response
 
   const handleError = {
@@ -41,12 +34,6 @@ export const handleErrors = async (error, { router, store, axios }) => {
       Vue.prototype.$q.notify({
         type: 'warning',
         message: errors.shift()
-      })
-    },
-    429: () => {
-      Vue.prototype.$q.notify({
-        type: 'negative',
-        message: 'Você está realizando muitas ações em um curto período de tempo, por favor tente novamente mais tarde.'
       })
     },
     500: () => {
